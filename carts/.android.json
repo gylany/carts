@@ -1,0 +1,1 @@
+{"target_version": 14, "name": "Carts!", "package": "com.luckdancing.carts", "include_pil": false, "numeric_version": "1", "expansion": false, "source": false, "icon_name": "Carts!", "version": "1.", "layout": null, "permissions": ["VIBRATE"], "include_sqlite": false, "store": "none", "orientation": "sensorLandscape"}

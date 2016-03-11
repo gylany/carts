@@ -1,0 +1,41 @@
+﻿# You can place the script of your game in this file.
+#
+## Initialize per game config options
+#
+
+
+# Declare images below this line, using the image statement.
+# eg. image eileen happy = "eileen_happy.png"
+
+image bg = "nullbg.png"
+image bg cartsbg = "cartsbg.png"
+image dcl scav =  "dcl_scav.png"
+image dcl fight =  "cartheader.png"
+image black = "#000"
+image white ="#fff"
+
+
+# Declare characters used by this game.
+
+define d=Character('Dead Cat Louie',color="ffcc")
+define j=Character('Jack',color="ffff")
+define di=Character('Diane',color="ffff")
+
+
+# The game starts here.
+label start:
+
+    scene black
+    show dcl scav at top,right
+    d"What are you looking at?"
+    scene white with dissolve
+    show dcl fight at top
+    d"AAAAIIIEEEEEEE"
+    scene cartsbg 
+    with dissolve
+    j"Haven't seen Dead Cat Louie around for a while"
+
+
+    return
+
+
