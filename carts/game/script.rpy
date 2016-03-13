@@ -12,7 +12,7 @@ image bg cartsbg = "cartsbg.png"
 image catstreet = "catstreet.png"
 image meeting = "meeting.png"
 image homelessguyalley = "homelessguyalley.png"
-image sad-woman = "sad-woman.png"
+image sadwoman = "sad-woman.png"
 image shopping-cart-bg = "shopping-cart-bg.png"
 image shopping-cart-attack = "shopping-cart-attack.png"
 image dcl scav =  "dcl_scav.png"
@@ -115,7 +115,7 @@ label hackercart:
     ha"Just the usual misery.."
 
     
-    scene sad-woman with dissolve
+    scene sadwoman with dissolve
     show hacker base at left
     ha"Have to tell Sandy about her.."
     
@@ -189,6 +189,51 @@ label current:
     show sandy base at left
     show dan base at right
     da"Me too!"
+label warcouncil:
+    scene meeting with dissolve
+    show sandy base at left
+    sa"What can we do? Organize and fight!"
+    show hacker base at right
+    ha"The bad carts have a mysterious plot device attached that's controlled from somewhere in the swamp"
+    scene meeting
+    show sandy base at left
+    show cop base at right
+    cop"We can go there and capture the source when we locate it."
+    sa"Can you mobilize the police?"
+    cop"No. The ones that don't think I'm crazy think it's a good thing they're killing the homeless. We're on our own."
+    scene meeting
+    show sandy base at left
+    show dan base at right
+    da"So what's new. Let's go kick some cart!"
+    scene meeting
+    show sandy base at left
+    show jack base at right
+    j"Yeah!"
+    scene meeting
+    show sandy base at left
+    show hacker base at right
+    sa"Can you help, Hacker?"
+    
+    ha"I can make a few magic plot devices to give us some warning. But we still have to fight"
+    scene meeting
+    show sandy base at left
+    show dan base at right
+    da"I know where to find a few tools."
+    scene meeting
+    show sandy base at left
+    show jack base at right
+    j"We can let people know."
+    scene meeting
+    show sandy base at left
+    show cop base at right
+    cop"Just where are you *finding* these tools...ah screw it. Meet me at the park later and we'll start hunting"
+    sa"OK"
+    scene meeting
+    show sandy base at left
+    sa"And so the defense began. We fought them in the alleys!. We fought them in the parking lots! We never surrendered!"
+    sa"But it was hard. New hostile carts appeared as the Hacker searched for the source. People kept dying and the authorities kept ignoring it."
+    sa"Then the the Hacker discovered....the Cartmaster"
+     
     return
 
 
