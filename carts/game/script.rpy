@@ -1,12 +1,19 @@
-﻿# You can place the script of your game in this file.
+﻿#
+## Carts! by Rob Sutherland - Released under Creative Commons 
+#
+
 #
 ## Initialize per game config options
 #
 
 
 # Declare images below this line, using the image statement.
-# eg. image eileen happy = "eileen_happy.png"
 
+#
+## Backgrounds
+#
+image black = "#000"
+image white ="#fff"
 image bg = "nullbg.png"
 image bg cartsbg = "cartsbg.png"
 image catstreet = "catstreet.png"
@@ -14,16 +21,22 @@ image meeting = "meeting.png"
 image homelessguyalley = "homelessguyalley.png"
 image sadwoman = "sad-woman.png"
 image shopping-cart-bg = "shopping-cart-bg.png"
+#
+## NPC
+#
 image shopping-cart-attack = "shopping-cart-attack.png"
 image dcl scav =  "dcl_scav.png"
 image dcl fight =  "cartheader.png"
+#
+## Characters
+#
 image jack base = "Keitaro.png"
 image dan base = "Jun.png"
 image hacker base = "hacker.png"
 image sandy base = "Fumie.png"
 image cop base = "Ai.png"
-image black = "#000"
-image white ="#fff"
+image cartmaster base = "cartmaster.png"
+
 
 
 # Declare characters used by this game.
@@ -35,16 +48,24 @@ define da=Character('Pushing Dan',color="ffff")
 define ha=Character('Hacker Kid',color="ffff")
 define sa=Character('Sandy',color="ffff")
 define cop=Character('Old Bill',color="ffff")
+define cm=Character('Cartmaster',color="fff")
+#
+## Start
+#
 
-# The game starts here.
 label start:
+#debug
 menu:
     "Jump to current":
          jump current
 
     "Jump intro":
          jump intro
-         
+
+#
+## Intro
+#
+
 label intro:
 
     scene black
@@ -53,6 +74,9 @@ label intro:
     scene white with dissolve
     show dcl fight at top
     d"AAAAIIIEEEEEEE"
+#
+## Jack & Dan 
+#
     scene cartsbg 
     with dissolve
     j"Haven't seen Dead Cat Louie around for a while"
@@ -67,14 +91,18 @@ label intro:
     da"Hey Jack"
     j"Hey Dan. Didja hear about Louie?"
     da"Yeah, that's messed up"
-
+#
+## Cops / Sandy Menu
+#
 menu:
     "Let's go see Sandy at the Mission":
          jump miss
 
     "Let's go talk to the cops":
          jump cops
-
+#
+## Mission Intro
+#
 label miss:
     scene white with dissolve
     show jack base at left
@@ -90,7 +118,9 @@ label miss:
     show sandy base at center
     sa"I think I better talk to the hacker"
     jump hackersandy
-    
+#
+## Hacker Intro
+#    
 label hackersandy:
     scene white with dissolve
     show sandy base at right
@@ -98,13 +128,18 @@ label hackersandy:
     sa"Something strange is killing the homeless"
     ha"Ok, strange is my thing"
     jump hackercart
-    
+#
+## Hacker Cart Fight
+#    
 label hackercart:
     scene white with dissolve
     show hacker base at left
     
     ha"My magic plot device shows a weird disturbance in the farce"
     ha"I'd better check it out"
+#
+## City Tour
+#
     scene catstreet with dissolve
     show hacker base at left 
     ha"Not you pussycat"
@@ -118,7 +153,9 @@ label hackercart:
     scene sadwoman with dissolve
     show hacker base at left
     ha"Have to tell Sandy about her.."
-    
+#
+## Fight
+#   
     scene shopping-cart-bg with dissolve
     show hacker base at left
     ha"Something is registering, I must be very close..."
@@ -128,7 +165,9 @@ label hackercart:
     show dcl fight at top
     ha"Whoa! If I hadn't zapped that shopping cart with my MPD it would have killed me. I better talk to Sandy"
     jump council
-    
+#
+## Cop Intro
+#    
 label cops:
     show cop base
     cop"What's your problem?"
@@ -138,7 +177,9 @@ label cops:
     da"Nuthin'. That's what's strange"
     cop"Come back when you know something."
     jump copcart
-    
+#
+## City Tour
+#   
 label copcart:
 
     scene white with dissolve
@@ -162,6 +203,9 @@ label copcart:
     scene shopping-cart-bg with dissolve
     show cop base at left
     cop"Nothing. Well, I'm going to get some more people on this. Nothing's going to kill people on my watch.."
+#
+## Fight
+#
     show shopping-cart-attack at right
     cop"What the hell!"
     scene white with dissolve
@@ -169,6 +213,9 @@ label copcart:
     cop"I can't believe it. If I hadn't fought that shopping cart off it would have killed me. I better talk to Sandy"
     show cop base at left   
     jump council
+#
+## Council of War
+#
 label council:
 label current:
     scene meeting with dissolve
@@ -189,7 +236,6 @@ label current:
     show sandy base at left
     show dan base at right
     da"Me too!"
-label warcouncil:
     scene meeting with dissolve
     show sandy base at left
     sa"What can we do? Organize and fight!"
@@ -228,12 +274,20 @@ label warcouncil:
     show cop base at right
     cop"Just where are you *finding* these tools...ah screw it. Meet me at the park later and we'll start hunting"
     sa"OK"
+#
+## Cart Master Intro
+#    
     scene meeting
     show sandy base at left
     sa"And so the defense began. We fought them in the alleys!. We fought them in the parking lots! We never surrendered!"
     sa"But it was hard. New hostile carts appeared as the Hacker searched for the source. People kept dying and the authorities kept ignoring it."
     sa"Then the the Hacker discovered....the Cartmaster"
-     
+    scene black
+    show sandy base at left
+    show cartmaster base at right
+    sa"Doesn't look that scary does she?"
+    sa"But behind that innocent face lurks the soul of a genocidal war criminal...."
+    sa"And so we prepare for our final conflict"
     return
 
 
